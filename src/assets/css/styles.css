@@ -21,6 +21,7 @@ GLOBAL STYLES
 html {
 	font-size: 16px;
 	position: relative;
+	scroll-behavior: smooth;
 }
 
 main {
@@ -51,19 +52,6 @@ textarea {
 
 button {
     cursor: pointer;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-text-fill-color: var(--primary);
-    transition: background-color 9999s ease-in-out 0s;
-}
-
-input:-moz-autofill {
-    background-color: rgba(0, 34, 72, 0.5);
-    color: var(--tertiary);
 }
 
 input:focus::placeholder,

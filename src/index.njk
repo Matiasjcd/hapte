@@ -405,12 +405,12 @@
         .solution-section {
             font-family: "Space Grotesk", sans-serif;
             text-align: center;
-            margin-top: 10.5rem;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            padding: 0 2rem;
+            padding: 6rem 2rem 0;
+            margin-top: 4.5rem;
         }
         
         .solution-section h1 {
@@ -442,6 +442,8 @@
             width: 95%;
             justify-self: center;
             height: auto;
+            object-fit: cover;
+            object-position: center;
         }
 
         .img-div {
@@ -568,7 +570,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-top: 10.5rem;
+            padding: 6rem 2rem 0;
+            margin-top: 4.5rem;
         }
 
         .about-us-section h1 {
@@ -581,11 +584,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 6rem 2rem 0;
+            margin: 4.5rem 0 10.5rem;
         }
 
         .contact-us-section h1 {
             text-align: center;
             font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-us-section h3 {
+            font-family: "Space Grotesk", sans-serif;
         }
 
         @media screen and (max-width: 80rem) {
@@ -836,7 +846,7 @@
             <div class="faq-left">
                 <h1 style="font-size: 3rem; margin: 0; margin-bottom: 1rem;">HaptE FAQs</h1>
                 <p style="font-size: 1.5rem;">Don't see your question on here?</p>
-                <a href="/contact-us">Contact Us&nbsp&nbsp&nbsp></a>
+                <a href="#contact-us">Contact Us&nbsp&nbsp&nbsp></a>
             </div>
             <div class="faq-right">
                 <div class="faq-item">
@@ -870,7 +880,7 @@
         </div>
         <div class="contact-us-section" id="contact-us">
             <h1>Contact Us</h1>
-            <input>
+            <h3>Have questions? Looking for a demo? Please email us at <a href="mailto:haptegeneral@gmail.com">haptegeneral@gmail.com</a>.</h3>
         </div>
     </main>
     <footer class="footer">
