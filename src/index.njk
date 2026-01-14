@@ -311,8 +311,7 @@
             margin-bottom: 2.25rem;
         }
 
-        .reim-div {
-            background-color: #7a7a7a;
+        .visibility-video {
             border-radius: 0.5rem;
             max-width: 58.25rem;
             max-height: 30rem;
@@ -399,6 +398,14 @@
             padding: 1.5rem 2rem;
             margin-bottom: 1rem;
             border-radius: 0.5rem;
+            display: grid;
+            grid-template-columns: 0.5fr 2.5fr;
+            gap: 1rem;
+            place-items: center;
+        }
+
+        .competition-right img {
+            max-width: 3rem;
         }
 
         .competition-right h3, .competition-right p {
@@ -857,7 +864,17 @@
                 <p>Warehouse performance is defined on the floor: every pick, every move, every decision. HaptE provides continuous visibility into floor activity, detecting errors in real time, and enabling immediate operational improvements without disrupting existing workflows.</p>
                 <a href="#meet-hapte">Learn More&nbsp&nbsp&nbsp></a>
             </section>
-            <div class="reim-div"></div>
+            <video
+            class="visibility-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            >
+            <source data-src="/assets/videos/visibility.mp4" type="video/mp4">
+            </video>
+
         </div>
         <div class="problem-section">
             <h1>The Execution Gap</h1>
@@ -905,6 +922,7 @@
             <div class="competition-right">
                 <div>
                     <section>
+                        <img src="/assets/images/moneybag.png" alt="Money bag image">
                     </section>
                     <section>
                         <h3>Expensive & Slow to Deliver Value</h3>
@@ -913,14 +931,24 @@
                     </section>
                 </div>
                 <div>
-                    <h3>Narrow Task Coverage</h3>
-                    <hr>
-                    <p>Most solutions focus on planning and reporting — not the physical tasks that actually determine accuracy and speed.</p>
+                    <section>
+                        <img src="/assets/images/lock.png" alt="Lock image">
+                    </section>
+                    <section>
+                        <h3>Narrow Task Coverage</h3>
+                        <hr>
+                        <p>Most solutions focus on planning and reporting — not the physical tasks that actually determine accuracy and speed.</p>
+                    </section>
                 </div>
                 <div>
-                    <h3>Fundamentally Limited</h3>
-                    <hr>
-                    <p>No existing platform truly understands what happens at the moment of pick, place, and pack. That's the most expensive blind spot in the entire warehouse.</p>
+                    <section>
+                        <img src="/assets/images/cancel.png" alt="Cancellation image">
+                    </section>
+                    <section>
+                        <h3>Fundamentally Limited</h3>
+                        <hr>
+                        <p>No current platform truly gets what happens at the moment of pick, place, and pack. That's the most expensive blind spot in the entire warehouse.</p>
+                    </section>
                 </div>
             </div>
         </div>
@@ -940,7 +968,7 @@
                     <p>Instantly installs to any material handling equipment.</p>
                 </div>
                 <div>
-                    <img src="/assets/images/plug_and_play.png" alt="Error detection image">
+                    <img src="/assets/images/dash.png" alt="Error detection image">
                     <h3>Complete Execution Traceability</h3>
                     <p>HaptE records video of exactly who touched what, when, and how for every order.</p>
                 </div>
@@ -1088,5 +1116,19 @@
                 }
             });
         });
+
+        const video = document.querySelector(".visibility-video");
+        const source = video.querySelector("source");
+
+        const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            source.src = source.dataset.src;
+            video.load();
+            observer.disconnect();
+        }
+        });
+
+        observer.observe(video);
+
     </script>
 </html>
