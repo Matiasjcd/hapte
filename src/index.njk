@@ -240,7 +240,7 @@
             position: relative;
             background: url("/assets/images/hero.png") center/cover no-repeat;
             background-position: 50% 40%;
-            min-height: 88.25vh;
+            min-height: calc(100vh - var(--nav-height));
             display: flex;
             place-items: center;
             display: flex;
@@ -737,7 +737,7 @@
             text-align: center;
             padding: 1rem;
             border: none;
-            max-width: 50%;
+            max-width: 40rem;
             margin: 0.75rem 0;
             width: 100%;
             color: var(--primary);
@@ -779,7 +779,7 @@
             display: inline-block;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        
+
         .contact-form button.loading span,
         .contact-form button.success span {
             opacity: 0;
@@ -1256,6 +1256,17 @@
             });
 
             observer.observe(video);
+
+            function setNavHeight() {
+                const nav = document.querySelector(".navbar");
+                document.documentElement.style.setProperty(
+                    "--nav-height",
+                    `${nav.offsetHeight}px`
+                );
+            }
+
+            window.addEventListener("load", setNavHeight);
+            window.addEventListener("resize", setNavHeight);
         });
     </script>
 </html>
