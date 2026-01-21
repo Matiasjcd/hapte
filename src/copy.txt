@@ -1,3 +1,0 @@
-Visibility section
-Warehouse performance is defined on the floor: every pick, every move, every decision. 
-HaptE gives operations teams the ability to see, understand, and improve that execution in real time — without disrupting existing workflows.
